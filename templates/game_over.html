@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="game-board">
+        <form method="POST">
+            {% for i in range(3) %}
+                <div class="row">
+                    {% for j in range(3) %}
+                        <div style="background-color: white;">
+                            <button type="submit" name="move" value="{{ i*3 + j }}" data-color="white;">
+                                {% if board[i][j] == 0 %}
+                                    &nbsp; <!-- Non-breaking space -->
+                                {% elif board[i][j] == 1 %}
+                                    X
+                                {% else %}
+                                    O
+                                {% endif %}
+                            </button>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </form>
+        <form method="POST">
+            <button type="submit" name="reset" id="resetButton" value="reset">Reset</button>
+        </form>
+        {% if winner == 0 %}
+        <h2>Draw!</h2>
+        {% else  %}
+            <h2>Winner: {{ winner }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>

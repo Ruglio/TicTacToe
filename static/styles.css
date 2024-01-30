@@ -1,0 +1,85 @@
+.game-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    border: none;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+
+.row div {
+    border: 2px solid black;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row div button {
+    font-size: 2em;
+    background: none;
+    border: none;
+}
+
+button {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+#colorButton {
+    font-size: 1.5em; /* Adjust as needed */
+    padding: 10px; /* Adjust as needed */
+    background-color: #808080; /* Grey color */
+    color: white; /* Adjust as needed */
+    border: none;
+    cursor: pointer;
+    margin-top: 20px; /* Adjust as needed */
+}
+
+#colorButton:hover {
+    background-color: #696969; /* Darker grey color */
+}
+
+button {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+#colorButton, #resetButton {
+    font-size: 1.5em; /* Adjust as needed */
+    padding: 10px; /* Adjust as needed */
+    background-color: #808080; /* Grey color */
+    color: white; /* Adjust as needed */
+    border: none;
+    cursor: pointer;
+    margin-top: 20px; /* Adjust as needed */
+    margin-bottom: 20px; /* Adjust as needed */
+    width: 200px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+}
+
+#colorButton:hover, #resetButton:hover {
+    background-color: #696969; /* Darker grey color */
+}
+
+html, body {
+    overflow: hidden !important;
+}

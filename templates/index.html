@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="game-board">
+        <form method="POST">
+            {% for i in range(3) %}
+                <div class="row">
+                    {% for j in range(3) %}
+                        <div style="background-color: {% if colorToggle == 'on' %}rgba({{ colors[i*3 + j][0]*255}}, {{ colors[i*3 + j][1]*255 }}, {{ colors[i*3 + j][2]*255 }}, 0.3){% else %}white{% endif %};">
+                            <button type="submit" name="move" value="{{ i*3 + j }}" data-color="{{ colors[i*3 + j][0]*255}}, {{ colors[i*3 + j][1]*255 }}, {{ colors[i*3 + j][2]*255 }}, 0.3">
+                                {% if board[i][j] == 0 %}
+                                    &nbsp; <!-- Non-breaking space -->
+                                {% elif board[i][j] == 1 %}
+                                    X
+                                {% else %}
+                                    O
+                                {% endif %}
+                            </button>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </form>
+        <form method="POST" action="/toggle_colors">
+            <button type="submit" id="colorButton" data-color-toggle="{{ colorToggle }}">Toggle Colors</button>
+        </form>
+    </div>
+</body>
+</html>
